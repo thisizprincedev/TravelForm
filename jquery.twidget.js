@@ -27,8 +27,8 @@
             locale: "en",
             marker: 1111,
             type: 'avia_hotel',
-            hide_logos: false,
-            open_in_new_tab: true,
+            hide_logos: true,
+            open_in_new_tab: false,
             default_origin: '',
             default_destination: '',
 			lock_destination: false,
@@ -74,8 +74,8 @@
                 month_names: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 avia_logo_link: '',
                 avia_logo_content: '',
-                hotel_logo_link: 'https://hotellook.com/',
-                avia_submit_domain : 'https://jetradar.com/searches/new'
+                hotel_logo_link: '',
+                avia_submit_domain : 'https://www.bigvaluetrip.com/flight/search'
             }
         },
         // globals
@@ -96,52 +96,6 @@
         // future instances of the plugin
         this.settings = $.extend( {}, defaults, options );
 
-        if(this.settings.locale == 'ru'){
-            this.settings.localization = {
-                avia_tab_caption: 'Авиабилеты',
-                hotel_tab_caption: 'Отели',
-                avia_logo_caption: 'Поиск дешёвых авиабилетов',
-                hotel_logo_caption: 'Поиск дешёвых отелей',
-                avia_input_origin_label: 'Город вылета',
-                avia_input_destination_label: 'Город прибытия',
-                hotel_input_destination_label: 'Город или отель',
-                hotels_count_caption_1: 'отель',
-                hotels_count_caption_2: 'отеля',
-                hotels_count_caption_5: 'отелей',
-                avia_input_date_start: 'Туда',
-                avia_input_date_end: 'Обратно',
-                hotel_input_date_start: 'Прибытие',
-                hotel_input_date_end: 'Выезд',
-                avia_passengers_select_caption: 'Пассажиры/Класс',
-                hotel_guests_select_caption: 'Гости',
-                avia_passengers_caption_1: 'пассажир',
-                avia_passengers_caption_2: 'пассажира',
-                avia_passengers_caption_5: 'пассажиров',
-                hotel_guests_caption_1: 'гость',
-                hotel_guests_caption_2: 'гостя',
-                hotel_guests_caption_5: 'гостей',
-                avia_passengers_select_adults: 'Взрослые',
-                avia_passengers_select_children: 'Дети до 12 лет',
-                hotel_guests_select_children: 'Дети до 17 лет',
-                hotel_guests_select_children_age: 'Возраст',
-                avia_passengers_select_infants: 'Дети до 2 лет',
-                avia_passengers_economy_class: 'эконом',
-                avia_passengers_business_class: 'бизнес-класс',
-                avia_passengers_business_class_checkbox: 'Перелет бизнес-классом',
-                avia_passengers_select_ready_button: 'Готово',
-                avia_submit_button_text: 'Найти билеты',
-                hotel_submit_button_text: 'Узнать цены',
-                avia_all_airports_caption: 'Все аэропорты',
-                datepicker_language: 'ru',
-                datepicker_return_ticket_caption: 'Обратный билет не нужен',
-                weekdays_short: ["вс", "пн", "вт", "ср", "чт", "пт", "сб"],
-                month_names: ["Января","Февраля","Марта","Апреля","Мая","Июня","Июля","Августа","Сентября","Октября","Ноября","Декабря"],
-                avia_logo_link: 'https://www.aviasales.ru/',
-                avia_logo_content: '<div class="twidget-logo-image twidget-aviasales-logo-img" width="30" height="30"></div>aviasales',
-                hotel_logo_link: 'https://hotellook.ru/',
-                avia_submit_domain : 'https://hydra.aviasales.ru/searches/new'
-            };
-        }
 
         this._defaults = defaults;
         this._name = pluginName;
@@ -855,10 +809,6 @@
             '        <div class="twidget-tab-content">'+
             '            <!--flight tab content-->'+
             '            <div id="twidget-tab1" class="twidget-tab active">'+
-            '                <div class="twidget-header" ' + (_this.settings.open_in_new_tab ? 'target="_blank"' : '') + '>'+
-            '                    <a href="' + _this.settings.localization.avia_logo_link + '?marker=' + _this.settings.marker + '" class="twidget-logo">' + _this.settings.localization.avia_logo_content + '</a>'+
-            '                    <a href="' + _this.settings.localization.avia_logo_link + '?marker=' + _this.settings.marker + '" class="twidget-title">'+_this.settings.localization.avia_logo_caption+'</a>'+
-            '                </div>'+
             '                <div class="clearfix"></div>'+
             '                <form action="' + _this.settings.localization.avia_submit_domain + '" method="get" autocomplete="off" ' + (_this.settings.open_in_new_tab ? 'target="_blank"' : '') + '>'+
             '                    <ul class="twidget-form-list clearfix">'+
@@ -974,11 +924,7 @@
             '            </div>'+
             '            <!-- hotel tab content -->'+
             '            <div id="twidget-tab2" class="twidget-tab">'+
-            '                <div class="twidget-header" ' + (_this.settings.open_in_new_tab ? 'target="_blank"' : '') + '>'+
-            '                    <a href="' + _this.settings.localization.hotel_logo_link + '?marker=' + _this.settings.marker + '" class="twidget-logo"><div class="twidget-logo-image twidget-hotellook-logo-img" width="30" height="30"></div>hotellook</a>'+
-            '                    <a href="' + _this.settings.localization.hotel_logo_link + '?marker=' + _this.settings.marker + '" class="twidget-title">' + _this.settings.localization.hotel_logo_caption + '</a>'+
-            '                </div>'+
-            '                <form action="https://search.hotellook.com/" method="get" autocomplete="off" ' + (_this.settings.open_in_new_tab ? 'target="_blank"' : '') + '>'+
+            '                <form action="https://www.bigvaluetrip.com/hotel/search" method="get" autocomplete="off" ' + (_this.settings.open_in_new_tab ? 'target="_blank"' : '') + '>'+
             '                    <ul class="twidget-form-list clearfix">'+
             '                        <!-- hotel city input -->'+
             '                        <li class="twidget-city-hotel">'+
