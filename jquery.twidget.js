@@ -28,7 +28,7 @@
             marker: 1111,
             type: 'avia_hotel',
             hide_logos: true,
-            open_in_new_tab: false,
+            open_in_new_tab: true,
             default_origin: '',
             default_destination: '',
 			lock_destination: false,
