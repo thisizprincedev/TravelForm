@@ -75,7 +75,7 @@
                 avia_logo_link: '',
                 avia_logo_content: '',
                 hotel_logo_link: '',
-                avia_submit_domain : 'https://www.bigvaluetrip.com/flight/search'
+                avia_submit_domain : 'https://www.bigvaluetrip.com/flight/'
             }
         },
         // globals
@@ -798,14 +798,6 @@
             var _this = this;
             $(this.element).html('<!-- start widget-->'+
             '    <div class="twidget-tabs">'+
-            '        <!--select tabs-->'+
-            '        <nav class="twidget-tab-links">'+
-            '            <ul class="clearfix">'+
-            '                <li id="twidget-flight-li" class="active"><a href="#twidget-tab1">'+_this.settings.localization.avia_tab_caption+'</a></li>'+
-            '                <li id="twidget-hotel-li"><a href="#twidget-tab2">'+_this.settings.localization.hotel_tab_caption+'</a></li>'+
-            '            </ul>'+
-            '        </nav>'+
-            '        <!-- tabs -->'+
             '        <div class="twidget-tab-content">'+
             '            <!--flight tab content-->'+
             '            <div id="twidget-tab1" class="twidget-tab active">'+
